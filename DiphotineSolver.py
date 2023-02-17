@@ -1,5 +1,7 @@
 from collections import Counter
 
+import os
+
 
 def calculate_gcd(a, b):
     mapping = {}
@@ -70,10 +72,15 @@ def solve_diphontine(a, b, n):
 
 flag = True
 while flag:
-    flag = True
-    a = int(input("Enter the value of a:"))
-    b = int(input("Enter the value of b:"))
-    n = int(input("Enter the valud of n:"))
+    os.system('cls')
+    try:
+        a = int(input("Enter the value of a:"))
+        b = int(input("Enter the value of b:"))
+        n = int(input("Enter the valud of n:"))
+    except ValueError:
+        print("Please Enter valid input!")
+        input()
+        continue
     solve_diphontine(a, b, n)
     print()
     flag = input("Do you want to try again? (y/?)").casefold() == "y"
