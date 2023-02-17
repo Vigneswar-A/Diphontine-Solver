@@ -61,7 +61,7 @@ def solve_diphontine(a, b, n):
         gcd, mapping = calculate_gcd(a//d, n//d)
         t = calculate_multiplicative_inverse(a//d, b//d, n//d, mapping, gcd)
         print(f"\n{t = }")
-        print(f"So the Solutions {d} are:")
+        print(f"So the {d} Solutions are:")
         for co_eff in range(d):
             print(f"    {t} + {co_eff}({n}/{d}) = {t + co_eff*n//d}")
     else:

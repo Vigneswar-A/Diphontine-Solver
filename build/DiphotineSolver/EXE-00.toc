@@ -97,7 +97,7 @@
  [],
  False,
  False,
- 1676646315,
+ 1676646693,
  [('run.exe',
    'C:\\Users\\viguv\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])
