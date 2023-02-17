@@ -11,13 +11,11 @@ def calculate_gcd(a, b):
         print(f"{a} = {b}x{q} + {rem}")
         mapping[rem] = [a, b, q]
         a, b = b, rem
-    print()
     return a, mapping
 
 
 def calculate_multiplicative_inverse(a, b, n, mapping, gcd):
     equation = Counter([gcd])
-    print("1", end="")
     while True:
         flag = True
         for num in mapping:
@@ -61,7 +59,11 @@ def solve_diphontine(a, b, n):
         print(f"=> ({a}/{d})X ≡ ({b}/{d})(mod {n}/{d})")
         print(f"=> ({a//d})X ≡ ({b//d})(mod {n//d})\n")
         gcd, mapping = calculate_gcd(a//d, n//d)
-        t = calculate_multiplicative_inverse(a//d, b//d, n//d, mapping, gcd)
+        if a == d:
+            t = (b//d) % (n//d)
+        else:
+            t = calculate_multiplicative_inverse(
+                a//d, b//d, n//d, mapping, gcd)
         print(f"\n{t = }")
         print(f"So the {d} Solutions are:")
         for co_eff in range(d):
